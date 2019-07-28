@@ -1,0 +1,12 @@
+[user]
+	name = huenisys
+	email = paul@huenits.com
+	
+[alias]
+	co = "!git checkout "
+	pom = "!git push origin master "
+	pod = "!git push origin dev "
+	poa = "!git push origin --all "
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	# https://coderwall.com/p/euwpig/a-better-git-log
+	# git lg -p, this shows the edited lines

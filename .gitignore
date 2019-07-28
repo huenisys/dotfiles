@@ -2,3 +2,6 @@
 /.bashrc
 /.bash_exports
 /.config/Code/User/settings.json
+/.bash_aliases
+/.gitconfig
+/.gitignore_global

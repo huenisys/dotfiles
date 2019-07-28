@@ -1,0 +1,123 @@
+#!/bin/bash
+
+#termux
+
+alias u1="ssh android@192.168.0.21"
+
+#alphabet
+
+# yarn
+alias ys="yarn run serve"
+alias yb="yarn run build"
+alias yl="yarn run lint"
+alias ytu="yarn run test:unit"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias a="php artisan"
+alias ac="git ac"
+alias c="composer --ansi"
+alias cl='clear'
+alias cu="composer update"
+alias gc='git checkout'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gp="git push"
+alias gs="git status"
+alias h='cd ~'
+alias l="laravel --ansi"
+alias nn="ng new"
+alias pa="php artisan"
+alias sm="php -S localhost:8000";
+alias sp="php -S localhost:8000 -t public";
+alias sq="winpty sqlite3.exe"
+alias v="vagrant"
+alias vs="vagrant ssh"
+
+# docker
+alias dart="docker-compose exec app php artisan"
+
+# ng
+alias ngl="ng lint --type-check --format stylish"
+alias nglf="ng lint --type-check --fix"
+
+
+# git
+alias push="git push origin master --force"
+alias amend="git commit --amend --no-edit"
+alias nah='git reset --hard;git clean -df;'
+
+## symfony
+alias pbc='php ./bin/console'
+
+# composer
+alias composer="composer --ansi"
+alias laravel="laravel --ansi"
+alias cda="composer dump-autoload"
+
+# laravel
+alias art='php artisan'
+alias avp="php artisan vendor:publish"
+alias vpaf="php artisan vendor:publish --tag=stir-assets --force"
+alias nrp="npm run prod"
+alias nrw="npm run watch"
+alias nrd="npm run dev"
+
+# npm
+alias nim="npm-install-missing"
+
+
+function artisan() {
+    php artisan "$@"
+}
+
+function vp() {
+    php artisan vendor:publish "$@"
+}
+
+function hs() {
+    # ( cd ~/Homestead && vagrant $* )
+    ( cd /e/homestead && vagrant $* )
+}
+
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+
+function dusk() {
+    pids=$(pidof /usr/bin/Xvfb)
+
+    if [ ! -n "$pids" ]; then
+        Xvfb :0 -screen 0 1280x960x24 &
+    fi
+
+    php artisan dusk "$@"
+}
+
+#php
+alias phpspec='vendor/bin/phpspec'
+alias phpunit='vendor/bin/phpunit'
+
+# vagrant
+alias vssh="vagrant ssh"
+alias xoff='sudo phpdismod -s cli xdebug'
+alias xon='sudo phpenmod -s cli xdebug'
+
+function xphp() {
+    (php -m | grep -q xdebug)
+    if [[ $? -eq 0 ]]
+    then
+        XDEBUG_ENABLED=true
+    else
+        XDEBUG_ENABLED=false
+    fi
+
+    if ! $XDEBUG_ENABLED; then xon; fi
+
+    php \
+        -dxdebug.remote_host=192.168.10.1 \
+        -dxdebug.remote_autostart=1 \
+        "$@"
+
+    if ! $XDEBUG_ENABLED; then xoff; fi
+}
