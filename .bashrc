@@ -107,6 +107,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+[[ $PRIVATE_EXPORTS_RUN != yes && -f ~/dotfiles/.bash_exports ]] && source ~/dotfiles/.bash_exports
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
