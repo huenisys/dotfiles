@@ -1,0 +1,3 @@
+[submodule "code-workspaces"]
+	path = code-workspaces
+	url = git@gitlab.com:huenisys/code-workspaces.git
