@@ -1,3 +1,4 @@
 PRIVATE_EXPORTS_RUN=yes
 
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export GIT_EDITOR=vim
