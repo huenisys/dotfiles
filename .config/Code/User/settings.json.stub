@@ -1,0 +1,11 @@
+{
+    "git.autofetch": true,
+    "workbench.editor.labelFormat": "short",
+    "editor.wordWrap": "on",
+    "editor.autoIndent": false,
+    "sqltools.useNodeRuntime": true,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "editor.renderWhitespace": "all",
+    "git.confirmSync": false
+}
