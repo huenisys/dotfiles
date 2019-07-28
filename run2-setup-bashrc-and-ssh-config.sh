@@ -6,6 +6,9 @@ DOT_DIR="$HOME/dotfiles"
 DOT_BASHRC="$DOT_DIR/.bashrc"
 BASHRC="$HOME/.bashrc"
 
+DOT_ALIASES="$DOT_DIR/.bash_aliases"
+ALIASES="$HOME/.bash_aliases"
+
 DOT_SSH_CONFIG="$DOT_DIR/.ssh/config"
 SSH_CONFIG="$HOME/.ssh/config"
 
@@ -21,6 +24,15 @@ fi
 [[ -f $BASHRC ]] && cp $BASHRC $BASHRC.bak
 ln -sfn $DOT_BASHRC $BASHRC
 echo "Symlinked to $BASHRC"
+
+## setup .bash_aliases
+if ! [ -f $DOT_ALIASES ]; then
+    cp $DOT_ALIASES.stub $DOT_ALIASES
+    echo "Created $DOT_ALIASES from stub"
+fi
+[[ -f $ALIASES ]] && cp $ALIASES $ALIASES.bak
+ln -sfn $DOT_ALIASES $ALIASES
+echo "Symlinked to $ALIASES"
 
 ## setup .ssh/config
 if ! [ -f $DOT_SSH_CONFIG ]; then
