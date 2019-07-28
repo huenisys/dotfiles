@@ -32,8 +32,6 @@ fi
 ln -sfn $DOT_SSH_CONFIG $SSH_CONFIG
 echo "Symlinked to $SSH_CONFIG"
 
-## todo: install php, composer and laravel binaries
-
 ## PATH updates
 if ! [ -f $DOT_EXPORTS ]; then
     cp $DOT_EXPORTS.stub $DOT_EXPORTS
