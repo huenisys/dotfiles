@@ -6,6 +6,9 @@ DOT_DIR="$HOME/dotfiles"
 DOT_BASHRC="$DOT_DIR/.bashrc"
 BASHRC="$HOME/.bashrc"
 
+DOT_EDITORCONFIG="$DOT_DIR/.editorconfig"
+EDITORCONFIG="$HOME/.editorconfig"
+
 DOT_ALIASES="$DOT_DIR/.bash_aliases"
 ALIASES="$HOME/.bash_aliases"
 
@@ -34,7 +37,7 @@ fi
 ln -sfn $DOT_ALIASES $ALIASES
 echo "Symlinked to $ALIASES"
 
-## setup .ssh/config
+## setup .editorconfig
 if ! [ -f $DOT_SSH_CONFIG ]; then
     cp $DOT_SSH_CONFIG.stub $DOT_SSH_CONFIG
     chown $USER $DOT_SSH_CONFIG
@@ -43,6 +46,14 @@ if ! [ -f $DOT_SSH_CONFIG ]; then
 fi
 ln -sfn $DOT_SSH_CONFIG $SSH_CONFIG
 echo "Symlinked to $SSH_CONFIG"
+
+## setup .ssh/config
+if ! [ -f $DOT_EDITORCONFIG ]; then
+    cp $DOT_EDITORCONFIG.stub $DOT_EDITORCONFIG
+    echo "Created $DOT_EDITORCONFIG from stub"
+fi
+ln -sfn $DOT_EDITORCONFIG $EDITORCONFIG
+echo "Symlinked to $EDITORCONFIG"
 
 ## PATH updates
 if ! [ -f $DOT_EXPORTS ]; then
