@@ -11,3 +11,12 @@
 *.njsproj
 *.sln
 *.sw*
+
+# python
+/.venv
+
+# php
+/vendor
+
+# node
+/node_modules
