@@ -1,0 +1,38 @@
+{
+    "git.autofetch": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "workbench.editor.labelFormat": "short",
+    "editor.wordWrap": "on",
+    "editor.autoIndent": false,
+    "sqltools.useNodeRuntime": true,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "editor.renderWhitespace": "all",
+    "emmet.triggerExpansionOnTab": true,
+    "git.confirmSync": false
+}
