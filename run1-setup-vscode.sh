@@ -6,7 +6,7 @@ DOT_DIR="$HOME/dotfiles"
 DOT_CODE_SETTINGS="$DOT_DIR/.config/Code/User/settings.json"
 CODE_SETTINGS="$HOME/.config/Code/User/settings.json"
 
-## setup .bashrc
+## setup code
 if ! [ -f $DOT_CODE_SETTINGS ]; then
     cp $DOT_CODE_SETTINGS.stub $DOT_CODE_SETTINGS
     echo "Created $DOT_CODE_SETTINGS from stub"
