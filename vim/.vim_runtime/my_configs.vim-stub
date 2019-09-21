@@ -6,8 +6,8 @@ set number
 set showbreak=▸\\ "
 set listchars=eol:↲,tab:––,trail:·,extends:»,precedes:«,nbsp:␣
 set list
-:imap jj <Esc>
 :hi Whitespace ctermfg=DarkGray
 :hi NonText ctermfg=DarkGray
 :match Whitespace /\s/
 :match ErrorMsg ' \+$'
+:imap jj <Esc>
